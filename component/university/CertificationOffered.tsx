@@ -20,9 +20,8 @@ export default function CertificationsOffered() {
 
             {/* Synced Heading */}
             <div className="flex flex-col items-center mb-12 sm:mb-16 text-center">
-                <h2 className="text-[10px] md:text-sm font-black uppercase tracking-[0.3em] text-blue-600 mb-2 animate-fade-in">Global Recognition</h2>
-                <h3 className="text-2xl md:text-4xl lg:text-[50px] font-[1000] text-slate-900 tracking-tighter italic leading-none">
-                    Certifications <span className="text-blue-600 not-italic">Offered</span>
+                <h3 className="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1.2]">
+                    Certifications <span className="text-[#155DFC] not-italic">Offered</span>
                 </h3>
             </div>
 

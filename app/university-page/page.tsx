@@ -10,6 +10,10 @@ import HiringPartners from "@/component/university/HiringPartner";
 import OurCampuses from "@/component/university/OurCampuse";
 import UniversityHighlight from "@/component/university/UniversityHighlights";
 import WhyUs from "@/component/university/WhyUs";
+import UniversityHighlight2 from "@/component/university/university-highlight2";
+import InquiryForm from "@/component/university/inquiry-form";
+import HiringPartner from "@/component/university/HiringPartner";
+import OurCampuseSlider from "@/component/university/OurCampuseSlider";
 
 
 
@@ -20,15 +24,19 @@ export default function UniversityPage() {
             <HeroSection />
 
             <UniversityHighlight />
-            <WhyUs />
-            <CertificationsOffered />
+            <InquiryForm />
+            {/* <UniversityHighlight2 /> */}
+            {/* <WhyUs /> */}
+            {/* <CertificationsOffered /> */}
 
             <CoursesGrid />
-            <TopPlacement />
-            <PlacementPartner titlePart1="Hiring" count="100" />
+            {/* <TopPlacement /> */}
+            <HiringPartner />
             <OurCampuses />
-            <FAQsSection />
+            <OurCampuseSlider />
             <HowToReachUs />
+            <FAQsSection />
+
         </main>
     )
 }

@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajeenkya DY Patil University - Admissions Open 2026-27</title>
+    <!-- Google Fonts: Poppins and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'Outfit', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS for Animations & Styles -->
+    <style>
+        /* Custom scrollbar hide utility */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom Animations */
+        @keyframes zoomSlow {
+            0% { transform: scale(1.1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1.1); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-zoomSlow {
+            animation: zoomSlow 20s infinite ease-in-out;
+        }
+        .animate-fadeUp {
+            opacity: 0;
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animation-delay-200 {
+            animation-delay: 200ms;
+        }
+
+        /* Custom card scale transition */
+        .placement-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .placement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Accordion transition utility */
+        .faq-accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .faq-accordion-content.open {
+            grid-template-rows: 1fr;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans min-h-screen">
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative w-full h-[100vh] overflow-hidden">
+        <!-- Background Video -->
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            class="absolute inset-0 w-full h-full object-cover scale-110 animate-zoomSlow"
+        >
+            <source src="/videos/campus-videos/AjeenkyaDYPatil-BaneerVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/30"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 md:mt-14 flex flex-col items-center justify-center h-full text-center px-6">
+            <h1 class="text-white text-xl md:text-5xl font-bold tracking-wide animate-fadeUp">
+                ADMISSIONS OPEN FOR 2026-27
+            </h1>
+
+            <button onclick="scrollToInquiry()" class="mt-6 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transition-all duration-300 animate-fadeUp animation-delay-200 hover:scale-105 active:scale-95">
+                APPLY NOW
+            </button>
+        </div>
+    </section>
+
+
+    <!-- 2. UNIVERSITY HIGHLIGHTS -->
+    <section class="relative overflow-hidden bg-white py-24 lg:py-32">
+        <!-- Background Decorations -->
+        <div class="absolute top-0 right-0 h-96 w-96 rounded-full bg-fuchsia-100 blur-3xl opacity-40"></div>
+        <div class="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-purple-100 blur-3xl opacity-40"></div>
+
+        <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="mb-10 text-center">
+                <h2 class="text-xl font-bold uppercase text-gray-900 sm:text-2xl md:text-5xl lg:text-5xl">
+                    Ajeenkya DY Patil University
+                </h2>
+                <div class="mx-auto mt-3 h-1 w-24 rounded-full bg-[#155DFC]"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="mx-auto max-w-6xl text-justify">
+                <p class="mb-6 text-base leading-relaxed text-gray-600 sm:text-md md:text-lg">
+                    Choose Ajeenkya DY Patil University, to not only explore and
+                    discover your path but also for far-reaching guidance towards your
+                    goals. We recognize that each student is significant, and hence we
+                    empower them to personalize their coursework and shape their
+                    curriculum to meet their specific goals. A flexible curriculum
+                    allows them to enhance skills and knowledge in areas that interest
+                    them, while they are also free to choose courses across departments
+                    and schools at university.
+                </p>
+
+                <!-- Expanded Content (Hidden on Mobile by default, toggled via JS) -->
+                <div id="highlights-expanded" class="hidden md:block">
+                    <p class="mb-6 text-base leading-relaxed text-gray-600 sm:text-md md:text-lg">
+                        Ajeenkya DY Patil University is the perfect match for students
+                        enthusiastic about personal growth and development, alongside
+                        traditional education. We encourage you to explore all aspects that
+                        develop your career and guide you toward your path to success. We
+                        are proud to say our university flourishes young adults into
+                        confident, successful beings to rise above in an ever-growing world.
+                    </p>
+
+                    <p class="text-base leading-relaxed text-gray-600 sm:text-md md:text-lg">
+                        Ajeenkya DY Patil University is here to help you construct
+                        meaningful careers. Our priority is to impart a student-centric
+                        environment and a learning-centric curriculum. At the fundamental
+                        level, education is an activity undertaken in search of truth and
+                        its utility is manifested in outcomes for society. A college degree
+                        is an amalgam of subjects put together to fast-track development in
+                        a particular domain of knowledge.
+                    </p>
+                </div>
+
+                <!-- Toggle Button for Mobile -->
+                <button
+                    id="highlights-toggle-btn"
+                    onclick="toggleHighlights()"
+                    class="mt-2 md:hidden inline-flex items-center cursor-pointer gap-1.5 px-0 py-2.5 text-blue-600 text-sm font-semibold transition-all duration-300"
+                >
+                    Read More
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. INQUIRY FORM -->
+    <section id="inquiry-section" class="relative bg-slate-50 py-12 overflow-hidden">
+        <div class="relative z-10 mx-auto max-w-7xl px-6">
+            <!-- Heading -->
+            <div class="mb-16 text-center">
+                <h3 class="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1]">
+                    Looking For More Information
+                </h3>
+                <div class="mx-auto mt-4 h-1 w-24 rounded-full bg-[#155DFC]"></div>
+            </div>
+
+            <!-- Form -->
+            <form class="mx-auto max-w-6xl" onsubmit="handleInquirySubmit(event)">
+                <div class="grid gap-6 md:grid-cols-3">
+                    <!-- Name -->
+                    <input
+                        type="text"
+                        placeholder="Name *"
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-800 placeholder:text-gray-500 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    />
+
+                    <!-- Email -->
+                    <input
+                        type="email"
+                        placeholder="Email *"
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-800 placeholder:text-gray-500 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    />
+
+                    <!-- Phone -->
+                    <input
+                        type="tel"
+                        placeholder="Phone Number *"
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-800 placeholder:text-gray-500 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    />
+
+                    <!-- Country -->
+                    <select
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-700 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    >
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+
+                    <!-- State -->
+                    <select
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-700 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    >
+                        <option value="" disabled selected>Select State</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Gujarat">Gujarat</option>
+                    </select>
+
+                    <!-- City -->
+                    <select
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-700 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    >
+                        <option value="" disabled selected>Select City</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                    </select>
+
+                    <!-- Course -->
+                    <select
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-700 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    >
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="MBA">MBA</option>
+                    </select>
+
+                    <!-- University -->
+                    <select
+                        required
+                        class="h-14 rounded-xl border border-gray-300 bg-white px-5 text-gray-700 shadow-sm outline-none transition-all duration-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    >
+                        <option value="Ajeenkya DY Patil University" selected>Ajeenkya DY Patil University</option>
+                        <option value="Seamedu School">Seamedu School</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-14 flex justify-center">
+                    <button
+                        type="submit"
+                        class="rounded-full bg-[#155DFC] px-16 py-4 text-lg font-semibold tracking-wide text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:scale-105 active:scale-95"
+                    >
+                        SUBMIT
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- 4. PROGRAMS OFFERED (COURSES GRID) -->
+    <section class="py-16 bg-gray-100 relative">
+        <!-- Heading -->
+        <div class="flex flex-col items-center mb-12 sm:mb-16 text-center">
+            <h3 class="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1]">
+                Programs <span class="text-blue-600 not-italic">Offered</span>
+            </h3>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Categories Switcher Section -->
+            <div class="relative mb-12 sm:mb-16">
+                <!-- Mobile Category Dropdown Selector -->
+                <div class="sm:hidden w-full relative">
+                    <button
+                        id="courses-dropdown-btn"
+                        onclick="toggleCoursesDropdown()"
+                        class="w-full flex items-center justify-between p-4 bg-white/90 backdrop-blur-md rounded-xl border border-slate-200/80 shadow-md transition-all active:scale-[0.98]"
+                    >
+                        <span class="text-xs font-black uppercase tracking-widest text-slate-900 flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></div>
+                            <span id="courses-dropdown-label">All Programs</span>
+                        </span>
+                        <i data-lucide="chevron-down" id="courses-dropdown-arrow" class="text-slate-400 transition-transform duration-500"></i>
+                    </button>
+
+                    <!-- Options list -->
+                    <div id="courses-dropdown-list" class="hidden absolute top-[calc(100%+8px)] left-0 right-0 z-[60] p-2 bg-white rounded-xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <!-- Backdrop for closing -->
+                    <div id="courses-dropdown-backdrop" class="hidden fixed inset-0 z-50 bg-black/5" onclick="toggleCoursesDropdown(false)"></div>
+                </div>
+
+                <!-- Desktop Pills Switcher -->
+                <div class="hidden sm:flex justify-center">
+                    <div id="courses-desktop-pills" class="inline-flex flex-wrap justify-center p-1.5 bg-slate-200/50 backdrop-blur-md rounded-2xl border border-slate-300/50 gap-1.5 shadow-inner">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div id="courses-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Course Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. STUDENT PLACEMENTS (HIRING PARTNER) -->
+    <section class="bg-gradient-to-b from-white to-slate-50 py-24 overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 md:px-20">
+            <!-- Heading -->
+            <div class="mb-16 text-center">
+                <h3 class="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1]">
+                    Student <span class="text-blue-600 not-italic">Placements</span>
+                </h3>
+                <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-500">
+                    Celebrating our students who transformed their education into
+                    successful careers with top companies.
+                </p>
+                <div class="mx-auto mt-5 h-1 w-24 rounded-full bg-blue-600"></div>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="py-8">
+                <!-- Mobile Slider -->
+                <div
+                    id="mobile-placements-slider"
+                    class="flex md:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6 px-6"
+                >
+                    <!-- Filled by JS -->
+                </div>
+
+                <!-- Mobile Slider Navigation Controls -->
+                <div class="flex md:hidden justify-between items-center px-6 mt-4 pb-4">
+                    <button
+                        onclick="slideMobilePlacements('prev')"
+                        class="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-slate-800 shadow-md hover:bg-slate-50 transition-all duration-300"
+                        aria-label="Previous slide"
+                    >
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- Mobile Dots -->
+                    <div id="mobile-placements-dots" class="flex justify-center gap-2">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <button
+                        onclick="slideMobilePlacements('next')"
+                        class="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-slate-800 shadow-md hover:bg-slate-50 transition-all duration-300"
+                        aria-label="Next slide"
+                    >
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Slider (Hidden on Mobile) -->
+                <div class="hidden md:block relative group/slider">
+                    <!-- Left Button -->
+                    <button
+                        onclick="scrollPlacementsDesktop('left')"
+                        class="absolute -left-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none"
+                        aria-label="Scroll left"
+                    >
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+
+                    <!-- Scroll container -->
+                    <div
+                        id="desktop-placements-slider"
+                        class="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide scroll-smooth"
+                    >
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <!-- Right Button -->
+                    <button
+                        onclick="scrollPlacementsDesktop('right')"
+                        class="absolute -right-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none"
+                        aria-label="Scroll right"
+                    >
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6. CAMPUS TOUR (CAMPUS IMAGES MOSAIC) -->
+    <section id="campus" class="py-24 bg-white font-sans overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- Header -->
+            <div class="flex flex-col items-center mb-16 text-center">
+                <h3 class="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1]">
+                    Campus <span class="text-blue-600 not-italic">Tour</span>
+                </h3>
+                <p class="text-slate-500 text-lg mt-8 max-w-2xl font-medium">
+                    Experience world-class learning across our specialized hub in Pune.
+                </p>
+            </div>
+
+            <!-- Life at ADYPU Title -->
+            <div class="flex items-center gap-6 mb-12">
+                <div class="flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Life at ADYPU</h3>
+                </div>
+                <div class="h-[2px] flex-grow bg-gradient-to-r from-blue-600/20 to-transparent rounded-full hidden sm:block"></div>
+            </div>
+
+            <!-- Mobile Grid Layout -->
+            <div class="md:hidden flex flex-col gap-4">
+                <!-- Featured Large Card -->
+                <div
+                    onclick="openCampusModal(0)"
+                    class="w-full h-60 rounded-xl overflow-hidden shadow-lg relative cursor-pointer group"
+                >
+                    <img
+                        id="mobile-campus-img-0"
+                        src=""
+                        alt=""
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent p-5 flex flex-col justify-end">
+                        <h4 id="mobile-campus-label-0" class="text-white font-bold text-lg tracking-tight"></h4>
+                    </div>
+                </div>
+
+                <!-- 2x2 Grid of Smaller Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div onclick="openCampusModal(1)" class="w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow relative cursor-pointer group">
+                        <img id="mobile-campus-img-1" src="" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div onclick="openCampusModal(2)" class="w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow relative cursor-pointer group">
+                        <img id="mobile-campus-img-2" src="" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div onclick="openCampusModal(3)" class="w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow relative cursor-pointer group">
+                        <img id="mobile-campus-img-3" src="" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div onclick="openCampusModal(4)" class="w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow relative cursor-pointer group">
+                        <img id="mobile-campus-img-4" src="" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Grid Layout -->
+            <div id="desktop-campus-grid" class="hidden md:grid grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6 auto-rows-[220px]">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 7. LIGHTBOX GALLERY MODAL -->
+    <div
+        id="campus-lightbox"
+        class="hidden fixed inset-0 z-[9999] flex flex-col lg:flex-row bg-slate-950/98 backdrop-blur-2xl transition-all duration-500"
+    >
+        <!-- Top Bar Actions -->
+        <div class="absolute top-0 inset-x-0 h-24 flex items-center justify-between px-8 z-[200] pointer-events-none">
+            <div
+                id="lightbox-counter"
+                class="text-white/40 text-[10px] font-black uppercase tracking-[0.3em] pointer-events-auto bg-white/5 border border-white/10 px-6 py-2.5 rounded-full backdrop-blur-xl"
+            >
+                1 / 5
+            </div>
+            <div class="flex items-center gap-4 pointer-events-auto">
+                <button
+                    onclick="toggleLightboxInfo()"
+                    id="lightbox-info-btn"
+                    class="p-3.5 rounded-full border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 transition-all"
+                    title="Toggle Info"
+                >
+                    <i data-lucide="info" class="w-[18px] h-[18px]"></i>
+                </button>
+                <button
+                    onclick="closeCampusModal()"
+                    class="p-3.5 rounded-full bg-white/5 text-white/70 border border-white/10 hover:bg-red-500 hover:text-white hover:border-red-400 transition-all duration-300"
+                >
+                    <i data-lucide="x" class="w-[18px] h-[18px]"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Viewport -->
+        <div class="relative flex-grow flex items-center justify-center p-6 lg:p-12 overflow-hidden h-[60vh] lg:h-full">
+            <button
+                onclick="navigateLightbox('prev', event)"
+                class="absolute left-6 lg:left-12 z-50 p-4 rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white border border-white/10 transition-all backdrop-blur-md"
+            >
+                <i data-lucide="arrow-left" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Lightbox Main Image -->
+            <div class="relative w-full h-full flex items-center justify-center">
+                <img
+                    id="lightbox-main-img"
+                    src=""
+                    alt="Campus View"
+                    class="max-w-full max-h-full object-contain p-4 lg:p-12 drop-shadow-[0_0_50px_rgba(37,99,235,0.15)] transition-all duration-500"
+                />
+            </div>
+
+            <button
+                onclick="navigateLightbox('next', event)"
+                class="absolute right-6 lg:right-12 z-50 p-4 rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white border border-white/10 transition-all backdrop-blur-md"
+            >
+                <i data-lucide="arrow-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Info -->
+        <div
+            id="lightbox-sidebar"
+            class="fixed lg:relative bottom-0 left-0 right-0 lg:top-0 w-full lg:w-[450px] h-[45vh] lg:h-full bg-slate-900/40 lg:bg-slate-900/60 backdrop-blur-[40px] border-t lg:border-t-0 lg:border-l border-white/10 p-8 lg:p-12 pt-24 lg:pt-36 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] z-[150] overflow-y-auto translate-y-0 lg:translate-x-0 opacity-100"
+        >
+            <div class="flex items-center justify-between mb-8 lg:hidden">
+                <span class="text-white/30 text-[10px] font-black uppercase tracking-[0.4em]">Image Context</span>
+                <button
+                    onclick="toggleLightboxInfo(false)"
+                    class="p-2 text-white/50 hover:text-white"
+                >
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="mb-10">
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-3 block">Perspective</span>
+                <h2 id="lightbox-title" class="text-3xl lg:text-4xl font-[1000] text-white tracking-tighter italic leading-[1.1]">
+                    Main Infrastructure
+                </h2>
+            </div>
+
+            <!-- Details cards -->
+            <div class="flex flex-col gap-5 mb-12">
+                <div class="flex items-center gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[8px] font-black uppercase tracking-widest text-white/30 mb-0.5">Timeline</span>
+                        <span id="lightbox-date" class="text-xs font-bold text-white/80 uppercase tracking-widest">Semester 2024</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40 group-hover:bg-white/10 group-hover:text-white transition-all duration-500">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[8px] font-black uppercase tracking-widest text-white/30 mb-0.5">Location Hub</span>
+                        <span id="lightbox-location" class="text-xs font-bold text-white/80 uppercase tracking-widest">Pune Hub</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-px bg-gradient-to-r from-white/10 to-transparent mb-12 opacity-50"></div>
+
+            <!-- Explore Mosaic Thumbnails -->
+            <h3 class="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-6">Explore Mosaic</h3>
+            <div id="lightbox-thumbnails" class="grid grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 8. HOW TO REACH US -->
+    <section id="reach-us" class="py-16 lg:py-20 bg-slate-50 relative overflow-hidden">
+        <!-- Decorative background element -->
+        <div class="absolute top-0 right-0 w-[40%] h-full bg-[#155DFC]/5 -skew-x-12 translate-x-24 hidden lg:block"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                <!-- Left Content: Typography & Quick Info -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <div class="mb-8 lg:mb-10">
+                        <h2 class="text-3xl md:text-5xl lg:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1] mb-6">
+                            How to <span class="text-[#155DFC]">Reach Us</span>
+                        </h2>
+                        <p class="text-slate-500 text-base font-medium max-w-sm leading-relaxed">
+                            Connect with our Pune hub for admissions, corporate partnerships, or a campus walkthrough.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-8 md:gap-x-8 md:gap-y-10">
+                        <!-- Address -->
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-8 h-8 rounded-lg bg-[#155DFC] flex items-center justify-center text-white shadow-lg shadow-[#155DFC]/20 transition-transform group-hover:scale-110">
+                                    <i class="fa-solid fa-map-marker-alt text-[14px]"></i>
+                                </div>
+                                <h4 class="text-sm md:text-sm font-bold uppercase tracking-widest text-slate-900">
+                                    Address
+                                </h4>
+                            </div>
+                            <p class="text-slate-500 text-[12px] md:text-sm font-medium leading-relaxed">
+                                Charoli Bk. via Lohegaon, Pune – 412105, Maharashtra, India.
+                            </p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-8 h-8 rounded-lg bg-[#155DFC] flex items-center justify-center text-white shadow-lg shadow-[#155DFC]/20 transition-transform group-hover:scale-110">
+                                    <i class="fa-solid fa-phone text-[14px]"></i>
+                                </div>
+                                <h4 class="text-sm md:text-sm font-bold uppercase tracking-widest text-slate-900">
+                                    Phone No.
+                                </h4>
+                            </div>
+                            <p class="text-slate-500 text-[12px] md:text-sm font-medium leading-relaxed">
+                                +91 9168067022
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-8 h-8 rounded-lg bg-[#155DFC] flex items-center justify-center text-white shadow-lg shadow-[#155DFC]/20 transition-transform group-hover:scale-110">
+                                    <i class="fa-solid fa-envelope text-[14px]"></i>
+                                </div>
+                                <h4 class="text-sm md:text-sm font-bold uppercase tracking-widest text-slate-900">
+                                    Email Id
+                                </h4>
+                            </div>
+                            <p class="text-slate-500 text-[12px] md:text-sm font-medium leading-relaxed break-words">
+                                info@seamedu.com
+                            </p>
+                        </div>
+
+                        <!-- Timing -->
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-8 h-8 rounded-lg bg-[#155DFC] flex items-center justify-center text-white shadow-lg shadow-[#155DFC]/20 transition-transform group-hover:scale-110">
+                                    <i class="fa-solid fa-clock text-[14px]"></i>
+                                </div>
+                                <h4 class="text-sm md:text-sm font-bold uppercase tracking-widest text-slate-900">
+                                    Timing
+                                </h4>
+                            </div>
+                            <p class="text-slate-500 text-[12px] md:text-sm font-medium leading-relaxed">
+                                9 AM – 6 PM (Mon–Fri)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content: Stylized Map Card -->
+                <div class="lg:col-span-7 h-[400px] lg:h-[450px] w-full relative">
+                    <div class="absolute inset-0 bg-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.05)] overflow-hidden border-4 border-white p-1">
+                        <div class="w-full h-full rounded-[2.2rem] overflow-hidden relative">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Ajeenkya%20DY%20Patil%20University,%20Charoli%20Bk,%20Pune%2018.6214203,73.9123937&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border: 0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="contrast-110 opacity-100 transition-all duration-700 hover:scale-105"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 9. GOT QUESTIONS? (FAQs ACCORDION) -->
+    <section class="relative py-14 md:py-20 bg-white overflow-hidden font-sans border-b border-slate-50">
+        <!-- Decorative background gradient -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-50/50 to-white pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-6 relative z-10 flex flex-col items-center">
+            <!-- Title -->
+            <div class="flex flex-col items-center mb-16 text-center">
+                <h3 class="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tighter leading-[1.1]">
+                    Got &nbsp;<span class="text-blue-600">Questions?</span>
+                </h3>
+            </div>
+
+            <!-- FAQ Grid - Split into two independent columns for masonry effect -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start w-full">
+                <!-- Left Column (Even indexes) -->
+                <div id="faq-col-left" class="flex flex-col gap-5">
+                    <!-- Filled by JS -->
+                </div>
+
+                <!-- Right Column (Odd indexes) -->
+                <div id="faq-col-right" class="flex flex-col gap-5">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Clean bottom safety section to prevent background bleeding -->
+        <div class="h-12 w-full bg-white relative z-10"></div>
+    </section>
+
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+        // ==========================================
+        // INITIALIZE LUCIDE ICONS
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            initCourses();
+            initPlacements();
+            initCampusTour();
+            initFAQs();
+        });
+
+        // ==========================================
+        // 1. HERO SECTION SCROLL
+        // ==========================================
+        function scrollToInquiry() {
+            const el = document.getElementById("inquiry-section");
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        // ==========================================
+        // 2. UNIVERSITY HIGHLIGHTS TOGGLE
+        // ==========================================
+        let isExpanded = false;
+        function toggleHighlights() {
+            const expDiv = document.getElementById("highlights-expanded");
+            const btn = document.getElementById("highlights-toggle-btn");
+            isExpanded = !isExpanded;
+            if (isExpanded) {
+                expDiv.classList.remove("hidden");
+                expDiv.classList.add("block");
+                btn.textContent = "Read Less";
+            } else {
+                expDiv.classList.remove("block");
+                expDiv.classList.add("hidden");
+                btn.textContent = "Read More";
+            }
+        }
+
+        // ==========================================
+        // 3. INQUIRY FORM SUBMIT
+        // ==========================================
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            alert("Thank you for your interest! Your inquiry has been submitted successfully.");
+            event.target.reset();
+        }
+
+        // ==========================================
+        // 4. COURSES GRID LOGIC
+        // ==========================================
+        const courseTabs = ["All", "Management", "Design", "Hospitality", "Technology", "Media"];
+        const coursesData = [
+            {
+                title: "BBA Finance",
+                category: "Management",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+            },
+            {
+                title: "MBA Marketing",
+                category: "Management",
+                image: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
+            },
+            {
+                title: "B.Des Fashion Design",
+                category: "Design",
+                image: "https://images.unsplash.com/photo-1520975922324-7b2b5b5b9c1a"
+            },
+            {
+                title: "Interior Design",
+                category: "Design",
+                image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+            },
+            {
+                title: "Hotel Management",
+                category: "Hospitality",
+                image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"
+            },
+            {
+                title: "Culinary Arts",
+                category: "Hospitality",
+                image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+            },
+            {
+                title: "BCA Software Development",
+                category: "Technology",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+            },
+            {
+                title: "AI & Data Science",
+                category: "Technology",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
+            },
+            {
+                title: "Film Production",
+                category: "Media",
+                image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+            },
+            {
+                title: "Digital Journalism",
+                category: "Media",
+                image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+            }
+        ];
+
+        let activeCourseTab = "All";
+        let isCoursesDropdownOpen = false;
+
+        function initCourses() {
+            // Build Desktop Pills
+            const pillsContainer = document.getElementById("courses-desktop-pills");
+            pillsContainer.innerHTML = courseTabs.map(tab => `
+                <button
+                    onclick="selectCourseTab('${tab}')"
+                    id="pill-${tab}"
+                    class="px-6 py-2.5 rounded-xl font-[1000] text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 ${activeCourseTab === tab ? 'bg-white text-blue-600 shadow-md scale-105' : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'}"
+                >
+                    ${tab}
+                </button>
+            `).join("");
+
+            // Build Mobile Dropdown Options
+            const listContainer = document.getElementById("courses-dropdown-list");
+            listContainer.innerHTML = courseTabs.map(tab => `
+                <button
+                    onclick="selectCourseTab('${tab}')"
+                    class="w-full text-left px-4 py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${activeCourseTab === tab ? 'bg-blue-50 text-blue-600 shadow-sm' : 'text-slate-600 hover:bg-slate-50'}"
+                >
+                    ${tab}
+                </button>
+            `).join("");
+
+            renderCourseCards();
+        }
+
+        function selectCourseTab(tab) {
+            activeCourseTab = tab;
+            isCoursesDropdownOpen = false;
+            
+            // Update mobile elements
+            document.getElementById("courses-dropdown-label").textContent = tab === "All" ? "All Programs" : tab;
+            document.getElementById("courses-dropdown-list").classList.add("hidden");
+            document.getElementById("courses-dropdown-backdrop").classList.add("hidden");
+            document.getElementById("courses-dropdown-arrow").style.transform = "rotate(0deg)";
+
+            // Update Desktop Pills active class
+            courseTabs.forEach(t => {
+                const btn = document.getElementById(`pill-${t}`);
+                if (t === tab) {
+                    btn.className = "px-6 py-2.5 rounded-xl font-[1000] text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 bg-white text-blue-600 shadow-md scale-105";
+                } else {
+                    btn.className = "px-6 py-2.5 rounded-xl font-[1000] text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 text-slate-600 hover:text-slate-900 hover:bg-white/50";
+                }
+            });
+
+            // Re-render
+            renderCourseCards();
+        }
+
+        function toggleCoursesDropdown(forceState) {
+            isCoursesDropdownOpen = forceState !== undefined ? forceState : !isCoursesDropdownOpen;
+            const dropdown = document.getElementById("courses-dropdown-list");
+            const backdrop = document.getElementById("courses-dropdown-backdrop");
+            const arrow = document.getElementById("courses-dropdown-arrow");
+
+            if (isCoursesDropdownOpen) {
+                dropdown.classList.remove("hidden");
+                backdrop.classList.remove("hidden");
+                arrow.style.transform = "rotate(180deg)";
+            } else {
+                dropdown.classList.add("hidden");
+                backdrop.classList.add("hidden");
+                arrow.style.transform = "rotate(0deg)";
+            }
+        }
+
+        function renderCourseCards() {
+            const grid = document.getElementById("courses-grid");
+            const filtered = activeCourseTab === "All" 
+                ? coursesData 
+                : coursesData.filter(c => c.category === activeCourseTab);
+
+            grid.innerHTML = filtered.map(course => `
+                <div class="relative h-[340px] rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-700 bg-black border border-white/5">
+                    <!-- Image -->
+                    <div class="absolute inset-0 z-0">
+                        <img
+                            src="${course.image}?auto=format&fit=crop&w=800&q=80"
+                            alt="${course.title}"
+                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-70"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 transition-colors duration-700 group-hover:via-black/50"></div>
+                    </div>
+
+                    <!-- Category Badge -->
+                    <div class="absolute top-5 right-5 z-20">
+                        <span class="bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-widest text-black shadow-md transition-transform duration-300 group-hover:-translate-y-1">
+                            ${course.category}
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20">
+                        <div class="transform transition-all duration-500 group-hover:-translate-y-4">
+                            <h3 class="text-xl font-bold text-white leading-tight drop-shadow-lg group-hover:text-blue-200 transition-colors">
+                                ${course.title}
+                            </h3>
+                            <div class="mt-4 flex items-center gap-2 transition-all duration-500 opacity-100 translate-y-0 sm:opacity-0 sm:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">View Details</span>
+                                <svg class="w-4 h-4 text-blue-600 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inner Border Glow -->
+                    <div class="absolute inset-0 border border-white/0 group-hover:border-blue-500/20 rounded-xl transition-all duration-700 pointer-events-none z-30"></div>
+                </div>
+            `).join("");
+        }
+
+        // ==========================================
+        // 5. STUDENT PLACEMENTS (HIRING PARTNER)
+        // ==========================================
+        const placementsData = [
+            {
+                name: "Shoyab Mulani",
+                course: "MCA",
+                batch: "2026",
+                package: "₹8.5 LPA",
+                studentImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800",
+                companyLogo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
+                company: "Infosys"
+            },
+            {
+                name: "Alif Shaikh",
+                course: "MBA",
+                batch: "2025",
+                package: "₹12 LPA",
+                studentImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800",
+                companyLogo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Deloitte.svg",
+                company: "Deloitte"
+            },
+            {
+                name: "Tanay Bhor",
+                course: "B.Tech CSE",
+                batch: "2025",
+                package: "₹18 LPA",
+                studentImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800",
+                companyLogo: "https://upload.wikimedia.org/wikipedia/commons/1/19/Accenture.svg",
+                company: "Accenture"
+            },
+            {
+                name: "Shreyank Parab",
+                course: "BCA",
+                batch: "2025",
+                package: "₹10 LPA",
+                studentImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800",
+                companyLogo: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg",
+                company: "TCS"
+            },
+            {
+                name: "Rahul Verma",
+                course: "Game Development",
+                batch: "2025",
+                package: "₹15 LPA",
+                studentImage: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800",
+                companyLogo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Ubisoft_logo.svg",
+                company: "Ubisoft"
+            }
+        ];
+
+        let activePlacementIndex = 0;
+        let desktopActiveIndex = 0;
+        let placementInterval = null;
+
+        function initPlacements() {
+            // Render Mobile Placements
+            const mobSlider = document.getElementById("mobile-placements-slider");
+            mobSlider.innerHTML = placementsData.map((item, idx) => `
+                <div class="w-[calc(100vw-3rem)] snap-center flex-shrink-0 rounded-[24px] overflow-hidden bg-white border border-[#e5e7eb] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                    <div class="relative overflow-hidden">
+                        <img src="${item.studentImage}" alt="${item.name}" class="h-[320px] w-full object-cover" />
+                        <div class="absolute right-4 top-4 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                            ${item.package}
+                        </div>
+                    </div>
+                    <div class="p-6 text-left">
+                        <h3 class="text-2xl font-bold text-slate-900">${item.name}</h3>
+                        <p class="mt-1 text-slate-500">${item.course} • Batch ${item.batch}</p>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-200 bg-white">
+                                <img src="${item.companyLogo}" alt="${item.company}" class="max-h-10 object-contain" />
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">${item.company}</h4>
+                                <p class="text-sm text-slate-500">Successfully Placed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+
+            // Add listener to update page dots on swipe scroll
+            mobSlider.addEventListener("scroll", (e) => {
+                const width = e.currentTarget.offsetWidth;
+                const scrollLeft = e.currentTarget.scrollLeft;
+                const index = Math.round(scrollLeft / width);
+                if (index >= 0 && index < placementsData.length) {
+                    updateMobilePlacementsDots(index);
+                }
+            });
+
+            // Render Mobile Dots
+            const dotsContainer = document.getElementById("mobile-placements-dots");
+            dotsContainer.innerHTML = placementsData.map((_, idx) => `
+                <button
+                    onclick="slideMobilePlacementsTo(${idx})"
+                    id="placement-dot-${idx}"
+                    class="h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'w-6 bg-blue-600' : 'w-2 bg-gray-300'}"
+                    aria-label="Go to slide ${idx + 1}"
+                ></button>
+            `).join("");
+
+            // Render Desktop Placements
+            const deskSlider = document.getElementById("desktop-placements-slider");
+            deskSlider.innerHTML = placementsData.map((item, idx) => `
+                <div class="placement-card snap-start flex-shrink-0 w-[calc((100%-4rem)/3)] group">
+                    <div class="relative overflow-hidden">
+                        <img src="${item.studentImage}" alt="${item.name}" class="h-[320px] w-full object-cover transition duration-500 group-hover:scale-105" />
+                        <div class="absolute right-4 top-4 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                            ${item.package}
+                        </div>
+                    </div>
+                    <div class="p-6 text-left">
+                        <h3 class="text-2xl font-bold text-slate-900">${item.name}</h3>
+                        <p class="mt-1 text-slate-500">${item.course} • Batch ${item.batch}</p>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-200 bg-white">
+                                <img src="${item.companyLogo}" alt="${item.company}" class="max-h-10 object-contain" />
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">${item.company}</h4>
+                                <p class="text-sm text-slate-500">Successfully Placed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+
+            // Add scroll listener to sync desktop index on manual swipe/scroll
+            deskSlider.addEventListener("scroll", (e) => {
+                const card = e.currentTarget.querySelector(".placement-card");
+                if (!card) return;
+                const cardWidth = card.offsetWidth;
+                const gap = 32;
+                const scrollAmount = cardWidth + gap;
+                const scrollLeft = e.currentTarget.scrollLeft;
+                const index = Math.round(scrollLeft / scrollAmount);
+                if (index >= 0 && index <= placementsData.length - 3) {
+                    desktopActiveIndex = index;
+                }
+            });
+ 
+            // Auto-slide every 3 seconds for mobile layout
+            startPlacementsAutoplay();
+        }
+
+        function updateMobilePlacementsDots(index) {
+            activePlacementIndex = index;
+            placementsData.forEach((_, idx) => {
+                const dot = document.getElementById(`placement-dot-${idx}`);
+                if (idx === index) {
+                    dot.className = "h-2 rounded-full transition-all duration-300 w-6 bg-blue-600";
+                } else {
+                    dot.className = "h-2 rounded-full transition-all duration-300 w-2 bg-gray-300";
+                }
+            });
+        }
+
+        function slideMobilePlacementsTo(index) {
+            const container = document.getElementById("mobile-placements-slider");
+            const width = container.offsetWidth;
+            container.scrollTo({
+                left: index * width,
+                behavior: "smooth"
+            });
+            updateMobilePlacementsDots(index);
+        }
+
+        function slideMobilePlacements(direction) {
+            let nextIndex = activePlacementIndex;
+            if (direction === "prev") {
+                nextIndex = (activePlacementIndex - 1 + placementsData.length) % placementsData.length;
+            } else {
+                nextIndex = (activePlacementIndex + 1) % placementsData.length;
+            }
+            slideMobilePlacementsTo(nextIndex);
+        }
+
+        function scrollPlacementsDesktop(direction) {
+            const container = document.getElementById("desktop-placements-slider");
+            const card = container.querySelector(".placement-card");
+            if (!card) return;
+            const cardWidth = card.offsetWidth;
+            const gap = 32;
+            const scrollAmount = cardWidth + gap;
+
+            if (direction === "left") {
+                desktopActiveIndex = desktopActiveIndex === 0 ? placementsData.length - 3 : desktopActiveIndex - 1;
+            } else {
+                desktopActiveIndex = (desktopActiveIndex + 1) % (placementsData.length - 2);
+            }
+            container.scrollTo({
+                left: desktopActiveIndex * scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        function startPlacementsAutoplay() {
+            if (placementInterval) clearInterval(placementInterval);
+            placementInterval = setInterval(() => {
+                if (window.innerWidth < 768) {
+                    slideMobilePlacements("next");
+                } else {
+                    const container = document.getElementById("desktop-placements-slider");
+                    if (!container) return;
+                    const card = container.querySelector(".placement-card");
+                    if (!card) return;
+                    const cardWidth = card.offsetWidth;
+                    const gap = 32;
+                    const scrollAmount = cardWidth + gap;
+
+                    desktopActiveIndex = (desktopActiveIndex + 1) % (placementsData.length - 2);
+                    container.scrollTo({
+                        left: desktopActiveIndex * scrollAmount,
+                        behavior: "smooth"
+                    });
+                }
+            }, 3000);
+        }
+
+        // ==========================================
+        // 6. CAMPUS TOUR & LIGHTBOX GALLERY MODAL LOGIC
+        // ==========================================
+        const campusImages = [
+            { src: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', category: 'Pune Hub', label: 'Main Infrastructure', date: 'Semester 2024' },
+            { src: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80', category: 'Studio', label: 'Innovation Workspace', date: 'Studio Session 2024' },
+            { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80', category: 'Labs', label: 'Advanced Sound Lab', date: 'Tech Week 2024' },
+            { src: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80', category: 'Ambi Hub', label: 'Urban Campus', date: 'Orientation 2024' },
+            { src: 'https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=600&q=80', category: 'Events', label: 'Main Auditorium', date: 'Convocation 2024' }
+        ];
+
+        let selectedCampusIndex = 0;
+        let showLightboxSidebar = true;
+
+        function initCampusTour() {
+            // Set Mobile Images
+            document.getElementById("mobile-campus-img-0").src = campusImages[0].src;
+            document.getElementById("mobile-campus-img-0").alt = campusImages[0].label;
+            document.getElementById("mobile-campus-label-0").textContent = campusImages[0].label;
+
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`mobile-campus-img-${i}`).src = campusImages[i].src;
+                document.getElementById(`mobile-campus-img-${i}`).alt = campusImages[i].label;
+            }
+
+            // Build Desktop Mosaic Grid
+            const deskGrid = document.getElementById("desktop-campus-grid");
+            deskGrid.innerHTML = `
+                <!-- Featured Card -->
+                <div
+                    onclick="openCampusModal(0)"
+                    class="col-span-2 row-span-2 rounded-[2rem] overflow-hidden group shadow-xl relative cursor-pointer"
+                >
+                    <img
+                        src="${campusImages[0].src}"
+                        alt="${campusImages[0].label}"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+                        <span class="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-2">${campusImages[0].category}</span>
+                        <p class="text-white font-black text-xl tracking-tight">${campusImages[0].label}</p>
+                    </div>
+                </div>
+            ` + campusImages.slice(1).map((item, idx) => `
+                <div
+                    onclick="openCampusModal(${idx + 1})"
+                    class="col-span-2 row-span-1 rounded-3xl overflow-hidden group shadow-md relative cursor-pointer"
+                >
+                    <img
+                        src="${item.src}"
+                        alt="${item.label}"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                        <div>
+                            <p class="text-white text-[10px] font-black uppercase tracking-widest">${item.category}</p>
+                            <p class="text-white text-sm font-semibold mt-1">${item.label}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+
+            // Build Lightbox Thumbnails List
+            const thumbsContainer = document.getElementById("lightbox-thumbnails");
+            thumbsContainer.innerHTML = campusImages.map((item, idx) => `
+                <div
+                    onclick="switchLightboxImage(${idx})"
+                    id="lightbox-thumb-${idx}"
+                    class="relative aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-white/5 grayscale hover:grayscale-0 hover:scale-105"
+                >
+                    <img src="${item.src}" alt="thumbnail" class="w-full h-full object-cover" />
+                </div>
+            `).join("");
+        }
+
+        function openCampusModal(index) {
+            selectedCampusIndex = index;
+            const lightbox = document.getElementById("campus-lightbox");
+            lightbox.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+            updateLightboxContent();
+        }
+
+        function closeCampusModal() {
+            const lightbox = document.getElementById("campus-lightbox");
+            lightbox.classList.add("hidden");
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+        }
+
+        function updateLightboxContent() {
+            const item = campusImages[selectedCampusIndex];
+            
+            // Set image & details
+            document.getElementById("lightbox-main-img").src = item.src;
+            document.getElementById("lightbox-title").textContent = item.label;
+            document.getElementById("lightbox-date").textContent = item.date;
+            document.getElementById("lightbox-location").textContent = item.category;
+            
+            // Set counter text
+            document.getElementById("lightbox-counter").textContent = `${selectedCampusIndex + 1} / ${campusImages.length}`;
+
+            // Update active thumbnail classes
+            campusImages.forEach((_, idx) => {
+                const thumb = document.getElementById(`lightbox-thumb-${idx}`);
+                if (idx === selectedCampusIndex) {
+                    thumb.className = "relative aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-blue-600 scale-95 shadow-lg shadow-blue-600/30";
+                } else {
+                    thumb.className = "relative aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-white/5 grayscale hover:grayscale-0 hover:scale-105";
+                }
+            });
+        }
+
+        function switchLightboxImage(index) {
+            selectedCampusIndex = index;
+            updateLightboxContent();
+        }
+
+        function navigateLightbox(direction, event) {
+            if (event) event.stopPropagation();
+            if (direction === "prev") {
+                selectedCampusIndex = selectedCampusIndex === 0 ? campusImages.length - 1 : selectedCampusIndex - 1;
+            } else {
+                selectedCampusIndex = selectedCampusIndex === campusImages.length - 1 ? 0 : selectedCampusIndex + 1;
+            }
+            updateLightboxContent();
+        }
+
+        function toggleLightboxInfo(forceState) {
+            showLightboxSidebar = forceState !== undefined ? forceState : !showLightboxSidebar;
+            const sidebar = document.getElementById("lightbox-sidebar");
+            const btn = document.getElementById("lightbox-info-btn");
+
+            if (showLightboxSidebar) {
+                sidebar.classList.remove("translate-y-full", "lg:translate-x-full", "opacity-0", "pointer-events-none", "lg:absolute", "lg:right-0");
+                btn.className = "p-3.5 rounded-full border border-blue-500 bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all";
+            } else {
+                sidebar.classList.add("translate-y-full", "lg:translate-x-full", "opacity-0", "pointer-events-none", "lg:absolute", "lg:right-0");
+                btn.className = "p-3.5 rounded-full border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 transition-all";
+            }
+        }
+
+        // Add keyboard keys support for Lightbox
+        document.addEventListener("keydown", (e) => {
+            const lightbox = document.getElementById("campus-lightbox");
+            if (!lightbox.classList.contains("hidden")) {
+                if (e.key === "ArrowLeft") navigateLightbox("prev");
+                if (e.key === "ArrowRight") navigateLightbox("next");
+                if (e.key === "Escape") closeCampusModal();
+            }
+        });
+
+        // ==========================================
+        // 9. GOT QUESTIONS? (FAQs SECTION LOGIC)
+        // ==========================================
+        const faqsData = [
+            {
+                question: "What courses does Seamedu offer?",
+                answer: "Seamedu offers a wide range of Undergraduate (UG) and Postgraduate (PG) programs across Media, Technology, Management, Design and Hospitality. With multiple specialized courses to choose from, there's a program suited for almost every creative and technical career path."
+            },
+            {
+                question: "Where are Seamedu's campuses located?",
+                answer: "Seamedu has campuses in Pune, Gurugram, and Kolkata. Affiliated with Ajeenkya D Y Patil University, D Y Patil University (Ambi), The NorthCap University, and Techno India University. All four cities have strong and active industries across media, design, technology, management and Hospitality, which directly benefits students through internships, placements, and industry exposure."
+            },
+            {
+                question: "What is the minimum qualification to apply?",
+                answer: "For UG programs, the minimum requirement is completion of Class 12. Eligibility varies by course, some programs are open to all streams while others require a Science background. For PG programs, a relevant bachelor's degree is required. Check the specific course page or speak with our counsellor to confirm eligibility for your chosen program."
+            },
+            {
+                question: "How do I apply to Seamedu?",
+                answer: "You can apply by filling out the application form on our website or click here to apply. Once submitted, our counsellor will reach out to guide you through the next steps including document submission and interview scheduling."
+            },
+            {
+                question: "What is the fee structure? Are scholarships available?",
+                answer: "Fee structures vary by program and campus. Please get in touch with our admissions team for a detailed fee breakup specific to your chosen program."
+            },
+            {
+                question: "Who will teach me at Seamedu?",
+                answer: "Our faculty consists of experienced industry professionals, ensuring students get real-world perspective and strong academic grounding. Many faculty members continue to work on live industry projects alongside teaching."
+            },
+            {
+                question: "What facilities does Seamedu offer?",
+                answer: "Seamedu campuses are equipped with professional-grade labs, studios, and workspaces that mirror real industry environments — giving students hands-on experience from day one of their program."
+            },
+            {
+                question: "What are the career outcomes for Seamedu graduates?",
+                answer: "Seamedu has a dedicated placement cell that actively connects students with leading companies across their respective industries. Our graduates have gone on to work with some of the biggest names in media, technology, management, design and hospitality."
+            },
+            {
+                question: "What makes Seamedu different from other colleges?",
+                answer: "Seamedu's strength lies in its industry-integrated curriculum, professional infrastructure, hands-on learning from Year 1, and strong placement support. Students graduate with real skills and a portfolio that helps them in the real world."
+            }
+        ];
+
+        let openFaqIndex = 0; // First item open by default matching React state
+
+        function initFAQs() {
+            const colLeft = document.getElementById("faq-col-left");
+            const colRight = document.getElementById("faq-col-right");
+
+            const leftFaqs = faqsData.filter((_, idx) => idx % 2 === 0);
+            const rightFaqs = faqsData.filter((_, idx) => idx % 2 !== 0);
+
+            // Render Left Column
+            colLeft.innerHTML = leftFaqs.map((faq, index) => {
+                const actualIndex = index * 2;
+                return createFaqItemHtml(faq, actualIndex);
+            }).join("");
+
+            // Render Right Column
+            colRight.innerHTML = rightFaqs.map((faq, index) => {
+                const actualIndex = index * 2 + 1;
+                return createFaqItemHtml(faq, actualIndex);
+            }).join("") + `
+                <!-- CTA Card - Perfectly Aligned at bottom of column 2 -->
+                <div
+                    class="p-5 rounded-[2.5rem] bg-blue-50/50 border border-blue-100 relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-6 group hover:shadow-xl hover:shadow-blue-600/5 transition-all cursor-pointer"
+                    onclick="scrollToInquiry()"
+                >
+                    <div class="absolute top-0 right-0 w-48 h-40 bg-blue-100/30 rounded-full -mr-24 blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+
+                    <div class="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left">
+                        <h5 class="text-slate-900 text-lg font-semibold tracking-tight">Still have questions?</h5>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mt-1">We're here to help you 24/7</p>
+                    </div>
+
+                    <button class="shrink-0 w-48 md:w-52 sm:w-auto py-3.5 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 transition-all flex items-center justify-center gap-2 relative z-10">
+                        Contact Support
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            `;
+            
+            // Reinitialize Lucide Icons inside generated contents
+            lucide.createIcons();
+        }
+
+        function createFaqItemHtml(faq, idx) {
+            const isOpen = idx === openFaqIndex;
+            return `
+                <div
+                    id="faq-item-${idx}"
+                    class="group relative overflow-hidden bg-white border transition-all duration-300 rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.03)] ${isOpen ? 'border-blue-100 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.08)]' : 'border-slate-100 hover:border-slate-200'}"
+                >
+                    <button
+                        onclick="toggleFaq(${idx})"
+                        class="w-full text-left px-4 py-3 flex items-center justify-between gap-4 select-none relative z-10"
+                    >
+                        <div class="flex items-center gap-5">
+                            <h4 id="faq-q-${idx}" class="text-[15px] sm:text-[16px] font-semibold leading-snug transition-colors duration-300 ${isOpen ? 'text-slate-900' : 'text-slate-600 group-hover:text-slate-900'}">
+                                ${faq.question}
+                            </h4>
+                        </div>
+                        <div 
+                            id="faq-icon-${idx}" 
+                            class="shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-blue-600 border-blue-600 text-white rotate-[135deg]' : 'border-slate-100 text-slate-400'}"
+                        >
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </div>
+                    </button>
+
+                    <!-- Accordion body using grid template rows height transition -->
+                    <div 
+                        id="faq-body-${idx}" 
+                        class="faq-accordion-content ${isOpen ? 'open' : ''}"
+                    >
+                        <div class="overflow-hidden">
+                            <div class="px-8 pb-8 text-slate-500 text-[14px] font-medium leading-relaxed">
+                                <div class="pt-4 border-t border-slate-50">
+                                    ${faq.answer}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleFaq(idx) {
+            const prevOpenIndex = openFaqIndex;
+            
+            // If we click the open one, close it (openIndex = null)
+            if (openFaqIndex === idx) {
+                openFaqIndex = null;
+            } else {
+                openFaqIndex = idx;
+            }
+
+            // Close the previously open item
+            if (prevOpenIndex !== null) {
+                const prevItem = document.getElementById(`faq-item-${prevOpenIndex}`);
+                const prevBody = document.getElementById(`faq-body-${prevOpenIndex}`);
+                const prevIcon = document.getElementById(`faq-icon-${prevOpenIndex}`);
+                const prevQ = document.getElementById(`faq-q-${prevOpenIndex}`);
+                
+                prevItem.className = "group relative overflow-hidden bg-white border transition-all duration-300 rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.03)] border-slate-100 hover:border-slate-200";
+                prevBody.classList.remove("open");
+                prevIcon.className = "shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 border-slate-100 text-slate-400";
+                prevQ.className = "text-[15px] sm:text-[16px] font-semibold leading-snug transition-colors duration-300 text-slate-600 group-hover:text-slate-900";
+            }
+
+            // Open the new item
+            if (openFaqIndex !== null) {
+                const item = document.getElementById(`faq-item-${idx}`);
+                const body = document.getElementById(`faq-body-${idx}`);
+                const icon = document.getElementById(`faq-icon-${idx}`);
+                const q = document.getElementById(`faq-q-${idx}`);
+                
+                item.className = "group relative overflow-hidden bg-white border transition-all duration-300 rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.03)] border-blue-100 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.08)]";
+                body.classList.add("open");
+                icon.className = "shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 bg-blue-600 border-blue-600 text-white rotate-[135deg]";
+                q.className = "text-[15px] sm:text-[16px] font-semibold leading-snug transition-colors duration-300 text-slate-900";
+            }
+        }
+    </script>
+</body>
+</html>

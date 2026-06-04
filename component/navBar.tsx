@@ -10,7 +10,7 @@ const menuData = {
   aboutUs: [
     { label: "philosophy", href: "#" },
     { label: "our team", href: "#" },
-    { label: "our partners", href: "#" },
+    { label: "our partners", href: "/department" },
     { label: "industry expert", href: "#" },
   ],
   programs: [
@@ -20,7 +20,7 @@ const menuData = {
         {
           title: "B.Sc",
           courses: [
-            { label: "Game Development", href: "#" },
+            { label: "Game Development", href: "/course-page" },
             { label: "Filmmaking", href: "#" },
             { label: "Sound Engineering", href: "#" },
             { label: "Game Art & Design", href: "#" },
@@ -134,7 +134,7 @@ const menuData = {
   ],
   campuses: [
     { label: "The NorthCap University", href: "#" },
-    { label: "Ajeenkya DY Patil University", href: "#" },
+    { label: "Ajeenkya DY Patil University", href: "/university-page" },
     { label: "Techno India University", href: "#" },
     { label: "D Y Patil University, Ambi", href: "#" },
   ],

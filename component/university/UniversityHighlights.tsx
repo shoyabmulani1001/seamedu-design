@@ -1,107 +1,91 @@
 "use client";
 
-import {
-    FaAward,
-    FaLightbulb,
-    FaHandshake,
-    FaGlobeAsia,
-} from "react-icons/fa";
-import { MdLocationCity } from "react-icons/md";
+import React, { useState } from "react";
 
 export default function UniversityHighlight() {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     return (
-        <section className="py-20 bg-slate-50/50 relative overflow-hidden font-sans">
-            {/* Subtle background decoration */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/4" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/4" />
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                {/* Title - Synced with Premium Style */}
-                <div className="flex flex-col items-center mb-16 text-center">
-                    <h2 className="text-[10px] md:text-sm font-black uppercase tracking-[0.3em] text-blue-600 mb-2 animate-fade-in">State-of-the-Art Learning</h2>
-                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-[1000] text-slate-900 tracking-tighter italic leading-none">
-                        Ajeenkya DY Patil <span className="text-blue-600 not-italic">University</span>
-                    </h3>
+        <section className="relative overflow-hidden bg-white py-24 lg:py-32">
+            {/* Background Decorations */}
+            <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-fuchsia-100 blur-3xl opacity-40" />
+            <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-purple-100 blur-3xl opacity-40" />
+
+            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+                {/* Heading */}
+                <div className="mb-10 text-center">
+                    <h2 className="text-xl font-bold uppercase text-gray-900 sm:text-2xl md:text-5xl lg:text-5xl">
+                        Ajeenkya DY Patil University
+                    </h2>
+
+                    <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-[#155DFC]"></div>
                 </div>
 
-                {/* Top 4 Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 mt-10">
-                    <Card
-                        icon={<FaAward size={24} />}
-                        title="NAAC A+ Accredited"
-                        text="Top NAAC Grade A+ Accredited University Ensures the highest Standard Of Education"
-                    />
+                {/* Content */}
+                <div className="mx-auto max-w-6xl text-justify">
+                    <p className="mb-6 text-base leading-slug text-gray-600 sm:text-md md:text-lg">
+                        Choose Ajeenkya DY Patil University, to not only explore and
+                        discover your path but also for far-reaching guidance towards your
+                        goals. We recognize that each student is significant, and hence we
+                        empower them to personalize their coursework and shape their
+                        curriculum to meet their specific goals. A flexible curriculum
+                        allows them to enhance skills and knowledge in areas that interest
+                        them, while they are also free to choose courses across departments
+                        and schools at university.
+                    </p>
 
-                    <Card
-                        icon={<MdLocationCity size={24} />}
-                        title="Urban Gurugram Campus"
-                        text="State-of-the-art Campus in the heart of Gurugram, Haryana, a thriving corporate hub"
-                    />
+                    <div className={`${isExpanded ? "block" : "hidden"} md:block`}>
+                        <p className="mb-6 text-base leading-slug text-gray-600 sm:text-md md:text-lg">
+                            Ajeenkya DY Patil University is the perfect match for students
+                            enthusiastic about personal growth and development, alongside
+                            traditional education. We encourage you to explore all aspects that
+                            develop your career and guide you toward your path to success. We
+                            are proud to say our university flourishes young adults into
+                            confident, successful beings to rise above in an ever-growing world.
+                        </p>
 
-                    <Card
-                        icon={<FaLightbulb size={24} />}
-                        title="Industry-Driven Curriculum"
-                        text="Programs designed in Collaboration with industry leaders to align with current market needs"
-                    />
-
-                    <Card
-                        icon={<FaHandshake size={24} />}
-                        title="Strong Industry Partnership"
-                        text="Collaborations with leading companies for research, internship, and placements"
-                    />
-                </div>
-
-                {/* Bottom Row - Height Balanced */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
-                    <Card
-                        icon={<FaGlobeAsia size={24} />}
-                        title="Global Exposure & Internship"
-                        text="Opportunities for international exposure and internship with top companies worldwide"
-                    />
-
-                    {/* Center Campus Card - Adjusted for full image visibility */}
-                    <div className="group relative bg-white rounded-2xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_60px_rgba(37,99,235,0.1)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden flex flex-col items-center justify-center min-h-[260px] p-6">
-                        <img
-                            src="/images/university-page/adypu-3d2.svg"
-                            alt="Campus"
-                            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
-                        />
-                        {/* Interactive overlay */}
-                        <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500" />
+                        <p className="text-base leading-slug text-gray-600 sm:text-md md:text-lg">
+                            Ajeenkya DY Patil University is here to help you construct
+                            meaningful careers. Our priority is to impart a student-centric
+                            environment and a learning-centric curriculum. At the fundamental
+                            level, education is an activity undertaken in search of truth and
+                            its utility is manifested in outcomes for society. A college degree
+                            is an amalgam of subjects put together to fast-track development in
+                            a particular domain of knowledge.
+                        </p>
                     </div>
 
-                    <Card
-                        icon={<FaAward size={24} />}
-                        title="Premier Institution"
-                        text="A legacy of excellence in shaping global leaders through world-class academic resources"
-                    />
+                    {/* Toggle Button for Mobile */}
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="mt-2 md:hidden inline-flex items-center cursor-pointer gap-1.5 px-6 py-2.5 text-blue-600 text-sm font-semibold transition-all duration-300 "
+                    >
+                        {isExpanded ? "Read Less" : "Read More"}
+                    </button>
                 </div>
+
+                {/* Stats Section */}
+                {/* <div className="mt-16 grid gap-8 md:grid-cols-3">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition hover:shadow-lg">
+                        <h3 className="mb-2 text-4xl font-bold text-[#155DFC]">500+</h3>
+                        <p className="text-gray-600">Industry Partners</p>
+                    </div>
+
+                    <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition hover:shadow-lg">
+                        <h3 className="mb-2 text-4xl font-bold text-[#155DFC]">50+</h3>
+                        <p className="text-gray-600">Global Collaborations</p>
+                    </div>
+
+                    <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm transition hover:shadow-lg">
+                        <h3 className="mb-2 text-4xl font-bold text-[#155DFC]">95%</h3>
+                        <p className="text-gray-600">Placement Assistance</p>
+                    </div>
+                </div> */}
             </div>
         </section>
     );
 }
 
+
 /* Slimmer Card Component */
-function Card({ icon, title, text }: any) {
-    return (
-        <div className="group relative bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(37,99,235,0.08)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden h-full flex flex-col items-center text-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-transparent to-blue-50/0 group-hover:from-blue-50/30 transition-all duration-500 -z-0" />
-            
-            <div className="relative z-10 flex flex-col items-center">
-                <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                    {icon}
-                </div>
-
-                <h3 className="font-black text-xs md:text-sm text-slate-800 mb-3 uppercase tracking-tighter group-hover:text-blue-600 transition-colors">
-                    {title}
-                </h3>
-
-                <p className="text-slate-500 text-[11px] md:text-xs leading-relaxed font-medium">
-                    {text}
-                </p>
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-        </div>
-    );
-}

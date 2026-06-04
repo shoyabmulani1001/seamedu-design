@@ -20,9 +20,9 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-black/30" />
 
             {/* Content */}
-            <div className="relative z-10 mt-60 flex flex-col items-center justify-center h-full text-center px-6">
+            <div className="relative z-10  md:mt-14 flex flex-col items-center justify-center h-full text-center px-6">
 
-                <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide animate-fadeUp">
+                <h1 className="text-white text-xl md:text-5xl font-bold tracking-wide animate-fadeUp">
                     ADMISSIONS OPEN FOR 2026-27
                 </h1>
 
