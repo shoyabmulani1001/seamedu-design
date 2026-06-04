@@ -89,9 +89,9 @@ const CampusTour = () => {
                 </div>
             </div>
 
-            <div className="relative group w-full">
+            <div className="relative group w-full max-w-[1160px] mx-auto md:px-20">
                 {/* Custom Navigation Buttons */}
-                <button className="swiper-button-prev-custom absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none cursor-pointer cursor-pointer" aria-label="Previous slide">
+                <button className="swiper-button-prev-custom absolute bottom-1 left-6 translate-y-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:left-4 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none cursor-pointer" aria-label="Previous slide">
                     <FaChevronLeft className="text-lg" />
                 </button>
 
@@ -115,7 +115,7 @@ const CampusTour = () => {
                         <SwiperSlide key={index}>
                             <div
                                 onClick={() => setSelectedVideo(slide.videoId)}
-                                className="relative h-[480px] md:h-[500px] w-[480px] md:w-[800px] mx-auto overflow-hidden group cursor-pointer bg-black"
+                                className="relative h-[480px] md:h-[500px] md:max-h-[520px] w-[90%] sm:w-[480px] md:w-full md:max-w-[1000px] mx-auto overflow-hidden group cursor-pointer bg-black rounded-3xl"
                             >
                                 <img
                                     src={slide.image}
@@ -127,9 +127,9 @@ const CampusTour = () => {
 
                                 <div className="absolute top-8 left-0 right-0 z-20">
                                     <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center w-full">
-                                        <span className="bg-white/95 backdrop-blur px-4 py-2 rounded-xl font-bold text-xs text-blue-600 shadow-sm">
+                                        {/* <span className="bg-white/95 backdrop-blur px-4 py-2 rounded-xl font-bold text-xs text-blue-600 shadow-sm">
                                             {slide.tag}
-                                        </span>
+                                        </span> */}
                                         <span className="bg-black/70 text-white px-4 py-1.5 rounded-xl text-xs font-semibold">
                                             {slide.duration}
                                         </span>
@@ -148,9 +148,9 @@ const CampusTour = () => {
                                             {slide.title}
                                         </h3>
 
-                                        <p className="text-sm md:text-lg text-gray-200 line-clamp-2 max-w-2xl font-medium">
+                                        {/* <p className="text-sm md:text-lg text-gray-200 line-clamp-2 max-w-2xl font-medium">
                                             {slide.desc}
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ const CampusTour = () => {
                     ))}
                 </Swiper>
 
-                <button className="swiper-button-next-custom absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none cursor-pointer cursor-pointer" aria-label="Next slide">
+                <button className="swiper-button-next-custom absolute bottom-1 right-6 translate-y-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:right-4 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full border border-slate-200 bg-white/95 backdrop-blur-sm flex items-center justify-center text-slate-800 shadow-lg hover:bg-blue-600 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none cursor-pointer" aria-label="Next slide">
                     <FaChevronRight className="text-lg" />
                 </button>
             </div>
