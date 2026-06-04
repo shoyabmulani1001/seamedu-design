@@ -358,7 +358,7 @@ export default function StudentPlacement() {
                                             <div className="flex h-14 w-36 items-center justify-center">
                                                 <img
                                                     src={item.companyLogo}
-                                                    alt={item.company}
+
                                                     className="max-h-10 object-contain"
                                                 />
                                             </div>
